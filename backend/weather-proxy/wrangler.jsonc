@@ -1,0 +1,69 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "weather-morning-proxy",
+  "main": "src/index.js",
+  "compatibility_date": "2026-06-18",
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "ratelimits": [
+    {
+      "name": "WEATHER_FORECAST_RATE_LIMITER",
+      "namespace_id": "1001",
+      "simple": {
+        "limit": 1500,
+        "period": 60
+      }
+    }
+  ],
+  "vars": {
+    "OPEN_METEO_BASE_URL": "https://api.open-meteo.com/v1/forecast",
+    "KMA_BASE_URL": "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst",
+    "CACHE_TTL_SECONDS": "1800",
+    "STALE_CACHE_TTL_SECONDS": "43200",
+    "PRIVACY_CONTACT_EMAIL": "spaceko126@naver.com"
+  },
+  "env": {
+    "staging": {
+      "name": "weather-morning-proxy-staging",
+      "ratelimits": [
+        {
+          "name": "WEATHER_FORECAST_RATE_LIMITER",
+          "namespace_id": "1002",
+          "simple": {
+            "limit": 1500,
+            "period": 60
+          }
+        }
+      ],
+      "vars": {
+        "OPEN_METEO_BASE_URL": "https://api.open-meteo.com/v1/forecast",
+        "KMA_BASE_URL": "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst",
+        "CACHE_TTL_SECONDS": "1800",
+        "STALE_CACHE_TTL_SECONDS": "43200",
+        "PRIVACY_CONTACT_EMAIL": "spaceko126@naver.com"
+      }
+    },
+    "production": {
+      "name": "weather-morning-proxy",
+      "ratelimits": [
+        {
+          "name": "WEATHER_FORECAST_RATE_LIMITER",
+          "namespace_id": "1003",
+          "simple": {
+            "limit": 1500,
+            "period": 60
+          }
+        }
+      ],
+      "vars": {
+        "OPEN_METEO_BASE_URL": "https://api.open-meteo.com/v1/forecast",
+        "KMA_BASE_URL": "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst",
+        "CACHE_TTL_SECONDS": "1800",
+        "STALE_CACHE_TTL_SECONDS": "43200",
+        "PRIVACY_CONTACT_EMAIL": "spaceko126@naver.com"
+      }
+    }
+  }
+}

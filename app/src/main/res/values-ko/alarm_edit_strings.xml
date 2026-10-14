@@ -1,0 +1,17 @@
+<resources>
+    <string name="alarm_edit">알람 편집</string>
+    <string name="weather_alarm_brief">날씨 보고 깨우는 알람</string>
+    <string name="weather_alarm_tagline">강수 예보가 설정한 기준을 넘는 날에만 더 일찍 깨워요.</string>
+    <string name="time_wheel_hint">탭하거나 밀어서 시간을 맞추세요</string>
+    <string name="alarm_options">알람 옵션</string>
+    <string name="alarm_sound">알림음</string>
+    <string name="alarm_sound_default">기본 알람음</string>
+    <string name="alarm_sound_soft_rain">부드러운 빗소리</string>
+    <string name="alarm_sound_bright_bell">선명한 벨</string>
+    <string name="choose_alarm_sound">알림음 선택</string>
+    <string name="vibration">진동</string>
+    <string name="quick_weather_rule">날씨 조건</string>
+    <string name="every_day">매일</string>
+    <string name="alarm_weather_card_title">날씨가 문제일 때만 울림</string>
+    <string name="alarm_weather_card_body">평소보다 이른 시간을 설정하세요. 앱이 먼저 예보를 확인하고, 선택한 날씨 조건일 때만 알람을 울립니다.</string>
+</resources>

@@ -1,0 +1,16 @@
+{
+  "name": "weather-morning-proxy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler deploy",
+    "dryrun:staging": "npx wrangler deploy --dry-run --env staging --outdir dist-dry-run-staging",
+    "dryrun:production": "npx wrangler deploy --dry-run --env production --outdir dist-dry-run-production"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

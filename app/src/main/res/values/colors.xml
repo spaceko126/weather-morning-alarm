@@ -1,0 +1,4 @@
+<resources>
+    <!-- Painted before Compose draws, so it must match the theme background. -->
+    <color name="window_background">#F8FAFC</color>
+</resources>

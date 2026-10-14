@@ -1,0 +1,5 @@
+<resources>
+    <string name="time_hour">시</string>
+    <string name="time_minute">분</string>
+    <string name="done">완료</string>
+</resources>

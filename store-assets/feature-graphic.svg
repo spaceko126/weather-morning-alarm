@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
+  <rect width="1024" height="500" fill="#f7f7fb"/>
+  <rect x="0" y="0" width="360" height="500" fill="#5e4bb6"/>
+  <circle cx="180" cy="210" r="96" fill="#ffffff" opacity="0.95"/>
+  <circle cx="180" cy="210" r="72" fill="#5e4bb6"/>
+  <path d="M180 152v62l48 29" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M112 144c18-38 44-58 79-58 40 0 69 23 83 62 38 6 66 34 66 74 0 43-35 78-78 78H120c-46 0-84-35-84-78 0-40 31-72 76-78Z" fill="#bdebff"/>
+  <path d="M108 328c-24 36-36 60-36 76 0 23 17 40 40 40s40-17 40-40c0-16-15-40-44-76Z" fill="#5e4bb6"/>
+  <path d="M286 326l-21 15 9 25-22-15-23 15 8-25-21-15 27-1 9-25 9 25 25 1Z" fill="#5e4bb6"/>
+  <text x="410" y="168" fill="#161616" font-family="Arial, sans-serif" font-size="46" font-weight="700">Weather Alarm</text>
+  <text x="412" y="236" fill="#333333" font-family="Arial, sans-serif" font-size="28">Wake earlier for rain or snow.</text>
+  <text x="412" y="306" fill="#5e4bb6" font-family="Arial, sans-serif" font-size="28" font-weight="700">Rain | Snow | Morning commute</text>
+</svg>
