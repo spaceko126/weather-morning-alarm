@@ -13,13 +13,13 @@ An Android alarm that rings only when the morning forecast meets your conditions
 
 <table>
   <tr>
-    <td align="center"><img src="store-assets/screenshots-clean/01-alarm-list-v0.3.5.png" width="200" alt="알람 목록"><br><sub>알람 목록</sub></td>
+    <td align="center"><img src="store-assets/screenshots-clean/01-alarm-list.png" width="200" alt="알람 목록"><br><sub>알람 목록</sub></td>
     <td align="center"><img src="store-assets/screenshots-clean/02-alarm-edit.png" width="200" alt="알람 편집"><br><sub>알람 편집</sub></td>
-    <td align="center"><img src="store-assets/screenshots-clean/03-time-picker-v0.3.5.png" width="200" alt="시간 선택"><br><sub>시간 선택</sub></td>
+    <td align="center"><img src="store-assets/screenshots-clean/03-time-picker.png" width="200" alt="시간 선택"><br><sub>시간 선택</sub></td>
   </tr>
   <tr>
     <td align="center"><img src="store-assets/screenshots-clean/04-location-search.png" width="200" alt="지역 설정"><br><sub>지역 설정</sub></td>
-    <td align="center"><img src="store-assets/screenshots-clean/05-weather-rules-v0.3.4.png" width="200" alt="날씨 조건 설정"><br><sub>날씨 조건 설정</sub></td>
+    <td align="center"><img src="store-assets/screenshots-clean/05-weather-rules.png" width="200" alt="날씨 조건 설정"><br><sub>날씨 조건 설정</sub></td>
     <td></td>
   </tr>
 </table>
@@ -32,7 +32,7 @@ An Android alarm that rings only when the morning forecast meets your conditions
 - **반복**: 요일을 반복하고, 한국 공휴일은 건너뛸 수 있습니다.
 - **기록**: 울렸거나 건너뛴 이유를 저장하고 최근 기록을 보여 줍니다.
 - **알람 신호**: 시스템 벨소리를 고르고, 진동과 스누즈를 씁니다.
-- **재부팅 대응**: 기기를 다시 켜면 알람을 다시 예약합니다.
+- **재예약**: 재부팅, 앱 업데이트, 시간대·시각 변경 뒤 알람을 다시 예약합니다.
 
 ## 구조
 
@@ -207,6 +207,8 @@ if (stale) {
 
 - 판정은 예보를 기준으로 하므로 실제 날씨와 다를 수 있습니다.
 - 제조사 절전 정책에 따라 사전 확인이 늦어질 수 있습니다 (사전 확인을 두 번 예약해 완화).
+- 미리 내린 판정은 6시간 동안만 씁니다. 판정이 없거나 그보다 오래됐으면 '날씨 확인 실패 시' 설정(울림 / 울리지 않음)을 따릅니다.
+- 프록시는 날씨 제공자가 모두 실패하면 캐시에 남은 예보(기본 설정에서 최대 12시간 지난 것)를 돌려줄 수 있습니다. 앱은 이 응답을 일반 예보와 구분하지 않으므로, 오래된 예보로 판정할 수 있습니다.
 - 앱 화면에는 날씨 데이터 출처 표시가 아직 없습니다.
 - 스토어에 출시하지 않았습니다 (서명된 APK 로 설치).
 
@@ -220,6 +222,7 @@ if (stale) {
 # Android (JDK 17, Android SDK 필요)
 .\gradlew.bat assembleDebug
 .\gradlew.bat testDebugUnitTest
+.\gradlew.bat lintDebug
 
 # 프록시 서버 주소를 넣어 빌드할 때
 .\gradlew.bat assembleRelease -PweatherProxyBaseUrl=https://<your-worker>.workers.dev
