@@ -3,6 +3,8 @@
 아침 날씨가 정한 조건을 만족할 때만 울리는 Android 조건부 알람 앱입니다.
 An Android alarm that rings only when the morning forecast meets your conditions.
 
+[![CI](https://github.com/spaceko126/weather-morning-alarm/actions/workflows/ci.yml/badge.svg)](https://github.com/spaceko126/weather-morning-alarm/actions/workflows/ci.yml)
+
 | 상태 | 형태 | 개발 방식 | 라이선스 |
 |---|---|---|---|
 | 개인 사용 중 · 스토어 미출시 | Android 앱 + 프록시 서버 | 기획 직접 · 코드 AI 작성 | MIT |
